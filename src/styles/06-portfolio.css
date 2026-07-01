@@ -1,0 +1,338 @@
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #d4af37;
+  color: #000;
+  box-shadow: none;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.portfolio-item,
+.cinematic-card {
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+  min-height: 280px;
+  cursor: pointer;
+}
+
+.portfolio-item::before,
+.portfolio-item:hover::before {
+  display: none;
+}
+
+.portfolio-image,
+.portfolio-preview-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: transform 0.75s ease;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92),
+    rgba(0, 0, 0, 0.38),
+    rgba(0, 0, 0, 0.08)
+  );
+
+  opacity: 0.65;
+  transition: opacity 0.45s ease;
+}
+
+.portfolio-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 4;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  background: rgba(212, 175, 55, 0.16);
+
+  border: 1px solid rgba(212, 175, 55, 0.35);
+
+  color: #d4af37;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  transform: translateY(-10px);
+
+  transition: 0.4s ease;
+}
+
+.portfolio-content {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+  bottom: 22px;
+
+  z-index: 5;
+
+  transform: translateY(18px);
+
+  transition: 0.45s ease;
+}
+
+.portfolio-content h3 {
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.portfolio-content p {
+  color: #d4af37;
+  font-size: 14px;
+  font-weight: 700;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition: 0.45s ease;
+}
+
+.portfolio-content p span {
+  display: inline-block;
+  transition: 0.35s ease;
+}
+
+.cinematic-card:hover .portfolio-image,
+.cinematic-card:active .portfolio-image,
+.cinematic-card:hover .portfolio-preview-video,
+.cinematic-card:active .portfolio-preview-video {
+  transform: scale(1.08);
+}
+
+.cinematic-card:hover .portfolio-overlay,
+.cinematic-card:active .portfolio-overlay {
+  opacity: 0.92;
+}
+
+.cinematic-card:hover .portfolio-badge,
+.cinematic-card:active .portfolio-badge,
+.cinematic-card:hover .portfolio-content p,
+.cinematic-card:active .portfolio-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cinematic-card:hover .portfolio-content,
+.cinematic-card:active .portfolio-content {
+  transform: translateY(0);
+}
+
+.cinematic-card:hover .portfolio-content p span,
+.cinematic-card:active .portfolio-content p span {
+  transform: translateX(6px);
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.92);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  z-index: 5000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.lightbox-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.lightbox-content img {
+  width: 100%;
+  max-height: 80vh;
+
+  object-fit: contain;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.lightbox-content h3 {
+  color: #d4af37;
+  margin-top: 18px;
+  font-size: 26px;
+}
+
+.image-counter {
+  color: #aaa;
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+
+  background: transparent;
+  border: none;
+
+  color: #fff;
+
+  font-size: 45px;
+
+  cursor: pointer;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(212, 175, 55, 0.15);
+
+  color: #fff;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-prev {
+  left: 40px;
+}
+
+.lightbox-next {
+  right: 40px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: #d4af37;
+  color: #000;
+
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* =========================
+   SMOOTH 3D POP - PORTFOLIO
+========================= */
+
+.portfolio-item,
+.cinematic-card {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  will-change: transform;
+
+  transition:
+    transform 0.45s cubic-bezier(0.2, 1.35, 0.35, 1),
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.portfolio-item:hover,
+.cinematic-card:hover {
+  transform:
+    perspective(1200px)
+    rotateX(4deg)
+    rotateY(-5deg)
+    translateY(-10px)
+    scale(1.025) !important;
+
+  border-color: rgba(212, 175, 55, 0.28);
+}
+
+.portfolio-item:active,
+.cinematic-card:active {
+  transform:
+    perspective(1200px)
+    rotateX(2deg)
+    rotateY(-2deg)
+    translateY(-4px)
+    scale(0.985) !important;
+}
+
+.portfolio-item:hover .portfolio-image,
+.portfolio-item:hover .portfolio-preview-video,
+.cinematic-card:hover .portfolio-image,
+.cinematic-card:hover .portfolio-preview-video {
+  transform: translateZ(28px) scale(1.08);
+}
+
+.portfolio-item:hover .portfolio-badge,
+.cinematic-card:hover .portfolio-badge {
+  transform: translateZ(38px) translateY(0);
+}
+
+.portfolio-item:hover .portfolio-content,
+.cinematic-card:hover .portfolio-content {
+  transform: translateZ(42px) translateY(0);
+}

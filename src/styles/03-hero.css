@@ -1,0 +1,269 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 130px 20px 80px;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.8;
+  transform-origin: center center;
+  animation:
+    heroSlowZoom 18s ease-in-out infinite alternate,
+    cameraFocusPull 7s ease-in-out infinite;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-logo {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: none;
+  box-shadow: none;
+  animation: none;
+  transform: none;
+}
+
+.gold-small {
+  color: #d4af37;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 15px auto 22px;
+  line-height: 1;
+  text-shadow: none;
+}
+
+.title-white {
+  display: block;
+  color: #fff;
+  font-family: "Cinzel", serif;
+  font-size: clamp(42px, 5vw, 76px);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.title-gold {
+  display: block;
+  color: #d4af37;
+  font-family: "Cinzel", serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  text-shadow: none;
+}
+
+.title-gold::after {
+  display: none;
+}
+
+.hero-text {
+  max-width: 760px;
+  color: #f1f1f1;
+  margin: 28px auto;
+  line-height: 1.8;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.scroll-down {
+  margin-top: 40px;
+  color: #d4af37;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   HERO EFFECTS
+========================= */
+
+.hero-light-rays,
+.hero-focus-breath,
+.hero-film-grain,
+.hero-light-leak,
+.hero-dust {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-dust {
+  z-index: 6;
+  overflow: hidden;
+}
+
+.hero-dust span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(212, 175, 55, 0.75);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+  animation: dustFloat 8s linear infinite;
+}
+
+/* =========================
+   DUST PARTICLE POSITIONS
+========================= */
+
+.hero-dust span:nth-child(1){left:8%;top:72%;animation-delay:0s;}
+.hero-dust span:nth-child(2){left:14%;top:55%;animation-delay:1s;}
+.hero-dust span:nth-child(3){left:20%;top:80%;animation-delay:2s;}
+.hero-dust span:nth-child(4){left:26%;top:45%;animation-delay:.5s;}
+.hero-dust span:nth-child(5){left:32%;top:70%;animation-delay:1.5s;}
+.hero-dust span:nth-child(6){left:38%;top:60%;animation-delay:2.5s;}
+.hero-dust span:nth-child(7){left:44%;top:78%;animation-delay:.8s;}
+.hero-dust span:nth-child(8){left:50%;top:52%;animation-delay:1.8s;}
+.hero-dust span:nth-child(9){left:56%;top:73%;animation-delay:2.8s;}
+.hero-dust span:nth-child(10){left:62%;top:44%;animation-delay:.3s;}
+.hero-dust span:nth-child(11){left:68%;top:67%;animation-delay:1.3s;}
+.hero-dust span:nth-child(12){left:74%;top:83%;animation-delay:2.3s;}
+.hero-dust span:nth-child(13){left:80%;top:58%;animation-delay:.7s;}
+.hero-dust span:nth-child(14){left:86%;top:76%;animation-delay:1.7s;}
+.hero-dust span:nth-child(15){left:92%;top:50%;animation-delay:2.7s;}
+
+.hero-dust span:nth-child(n+16){
+    width:2px;
+    height:2px;
+    opacity:.55;
+}
+
+.hero-dust span:nth-child(16){left:5%;top:35%;animation-delay:1.2s;}
+.hero-dust span:nth-child(17){left:12%;top:25%;animation-delay:2.2s;}
+.hero-dust span:nth-child(18){left:19%;top:18%;animation-delay:.4s;}
+.hero-dust span:nth-child(19){left:28%;top:30%;animation-delay:1.4s;}
+.hero-dust span:nth-child(20){left:36%;top:20%;animation-delay:2.4s;}
+.hero-dust span:nth-child(21){left:43%;top:34%;animation-delay:.9s;}
+.hero-dust span:nth-child(22){left:51%;top:24%;animation-delay:1.9s;}
+.hero-dust span:nth-child(23){left:59%;top:32%;animation-delay:2.9s;}
+.hero-dust span:nth-child(24){left:67%;top:22%;animation-delay:.6s;}
+.hero-dust span:nth-child(25){left:75%;top:36%;animation-delay:1.6s;}
+.hero-dust span:nth-child(26){left:83%;top:28%;animation-delay:2.6s;}
+.hero-dust span:nth-child(27){left:91%;top:18%;animation-delay:.2s;}
+
+/* =========================
+   CINEMATIC OVERLAYS
+========================= */
+
+.hero-light-rays{
+    inset:-25%;
+    z-index:5;
+
+    background:
+        linear-gradient(
+            118deg,
+            transparent 0%,
+            rgba(212,175,55,.035) 42%,
+            transparent 64%
+        ),
+        linear-gradient(
+            74deg,
+            transparent 0%,
+            rgba(255,255,255,.025) 48%,
+            transparent 72%
+        );
+
+    opacity:.55;
+
+    filter:blur(18px);
+
+    mix-blend-mode:screen;
+
+    animation:subtleLightRays 12s ease-in-out infinite alternate;
+}
+
+.hero-focus-breath{
+    z-index:6;
+
+    backdrop-filter:blur(0);
+    -webkit-backdrop-filter:blur(0);
+
+    animation:focusBreath 7s ease-in-out infinite;
+}
+
+.hero-film-grain{
+
+    z-index:8;
+
+    opacity:.08;
+
+    mix-blend-mode:overlay;
+
+    background-image:
+        radial-gradient(circle,rgba(255,255,255,.35) 1px,transparent 1px),
+        radial-gradient(circle,rgba(0,0,0,.35) 1px,transparent 1px);
+
+    background-size:4px 4px,6px 6px;
+
+    background-position:0 0,2px 2px;
+
+    animation:filmGrainMove .5s steps(2) infinite;
+}
+
+.hero-light-leak{
+
+    z-index:7;
+
+    opacity:0;
+
+    background:
+        radial-gradient(circle at 0% 35%,rgba(212,175,55,.20),transparent 28%),
+        radial-gradient(circle at 100% 72%,rgba(255,180,80,.12),transparent 32%);
+
+    mix-blend-mode:screen;
+
+    filter:blur(18px);
+
+    animation:lightLeakPulse 9s ease-in-out infinite;
+}
+
+.hero-lens-flare{
+    display:none;
+}

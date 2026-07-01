@@ -1,0 +1,196 @@
+/* =========================
+   BOOKING
+========================= */
+
+.booking-box {
+  width: 100%;
+  max-width: 980px;
+  margin: 45px auto 0;
+  padding: 38px;
+  border-radius: 30px;
+
+  background: rgba(15, 15, 15, 0.62);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+
+  transform: none;
+}
+
+.booking-box:hover,
+.booking-box:active {
+  transform: none;
+}
+
+.booking-form {
+  max-width: 850px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 17px;
+
+  background: rgba(15, 15, 15, 0.8);
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  color: rgba(255, 255, 255, 0.92);
+
+  border-radius: 14px;
+
+  outline: none;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  transition:
+    transform 0.42s cubic-bezier(0.2, 1.35, 0.35, 1),
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.booking-form input:hover,
+.booking-form select:hover,
+.booking-form textarea:hover {
+  transform:
+    perspective(1000px)
+    rotateX(4deg)
+    rotateY(-5deg)
+    translateY(-8px)
+    scale(1.02);
+}
+
+.booking-form input:active,
+.booking-form select:active,
+.booking-form textarea:active {
+  transform:
+    perspective(1000px)
+    rotateX(2deg)
+    rotateY(-2deg)
+    translateY(-3px)
+    scale(0.985);
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.48);
+  opacity: 1;
+}
+
+.booking-form select {
+  color: rgba(255, 255, 255, 0.48);
+  cursor: pointer;
+}
+
+.booking-form select:valid {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.booking-form option {
+  color: #fff;
+  background: #111;
+}
+
+.booking-form select option[value=""],
+input[type="date"]:invalid {
+  color: #aaa;
+}
+
+.booking-form textarea,
+.booking-form .full-width,
+.booking-form button {
+  grid-column: span 2;
+}
+
+.booking-form textarea {
+  min-height: 130px;
+}
+
+.booking-form button {
+  width: 100%;
+  min-height: 60px;
+  padding: 18px;
+
+  background: #d4af37;
+  color: #000;
+
+  border: none;
+  border-radius: 40px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow: none;
+
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  transition:
+    transform 0.42s cubic-bezier(0.2, 1.35, 0.35, 1),
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.booking-form button:hover {
+  transform:
+    perspective(1000px)
+    rotateX(4deg)
+    rotateY(-5deg)
+    translateY(-8px)
+    scale(1.02);
+}
+
+.booking-form button:active {
+  transform:
+    perspective(1000px)
+    rotateX(2deg)
+    rotateY(-2deg)
+    translateY(-3px)
+    scale(0.985);
+}
+
+/* Date input */
+
+.date-input,
+input[type="date"],
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #fff;
+}
+
+.date-input::placeholder {
+  color: #aaa;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 1;
+  cursor: pointer;
+}

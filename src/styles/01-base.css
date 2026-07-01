@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,600;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   GLOBAL RESET + FONTS
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  background: #050505;
+  color: #fff;
+}
+
+.site {
+  position: relative;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+/* =========================
+   GLOBAL BACKGROUND VIDEO
+========================= */
+
+.site-bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.site-bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.58);
+}
+
+/* =========================
+   GLOBAL SECTION STYLES
+========================= */
+
+.section {
+  position: relative;
+  z-index: 2;
+  padding: 100px 7%;
+  scroll-margin-top: 120px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title p,
+.about-label,
+.filter-btn,
+.portfolio-badge,
+.image-counter {
+  font-family: "Manrope", sans-serif;
+}
+
+.section-title p {
+  color: #d4af37;
+  letter-spacing: 4px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.section-title h2 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(32px, 5vw, 55px);
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+/* =========================
+   SHARED CARD BASE
+========================= */
+
+.service-card,
+.why-card,
+.about-profile-card,
+.about-main-card,
+.about-stats-bar,
+.about-stats-bar div,
+.portfolio-item,
+.cinematic-card,
+.review-form,
+.contact-box,
+.contact-link {
+  background: rgba(12, 12, 12, 0.52);
+  backdrop-filter: blur(22px) saturate(135%);
+  -webkit-backdrop-filter: blur(22px) saturate(135%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 1.4, 0.35, 1),
+    border-color 0.45s ease,
+    background 0.45s ease;
+}
+
+.service-card,
+.why-card,
+.about-profile-card,
+.about-main-card,
+.review-form,
+.contact-box,
+.portfolio-item,
+.cinematic-card {
+  border-radius: 28px;
+}
+
+.service-card:hover,
+.why-card:hover,
+.about-main-card:hover,
+.about-info-pill:hover,
+.about-stats-bar div:hover,
+.portfolio-item:hover,
+.cinematic-card:hover {
+  transform:
+    perspective(1000px)
+    rotateX(4deg)
+    rotateY(-6deg)
+    translateY(-9px)
+    scale(1.02);
+  background: rgba(18, 18, 18, 0.62);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.service-card:active,
+.why-card:active,
+.about-main-card:active,
+.about-info-pill:active,
+.about-stats-bar div:active,
+.portfolio-item:active,
+.cinematic-card:active {
+  transform:
+    perspective(1000px)
+    rotateX(2deg)
+    rotateY(-3deg)
+    translateY(-3px)
+    scale(0.985);
+}
+
+/* Outer containers stay stable */
+
+.about-profile-card:hover,
+.contact-box:hover,
+.contact-box:active,
+.review-form:hover,
+.review-form:active,
+.booking-box:hover,
+.booking-box:active,
+.about-stats-bar:hover,
+.about-stats-bar:active {
+  transform: none;
+}
+
+/* =========================
+   GLOBAL TYPOGRAPHY GROUPS
+========================= */
+
+.service-card h3,
+.why-card h3,
+.portfolio-content h3,
+.about-main-card h3,
+.contact-link h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+}
+
+.service-card p,
+.why-card p,
+.hero-text,
+.about-main-card p,
+.contact-link span,
+.footer-brand p,
+.footer-info p,
+.footer-copy {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+}
+
+/* =========================
+   GLOBAL BUTTON BASE
+========================= */
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.18);
+  transition: 0.3s;
+}
+
+.gold-btn {
+  background: #d4af37;
+  color: #000;
+}
+
+.outline-btn {
+  color: #fff;
+  border: 1px solid #d4af37;
+}
+
+.gold-btn:hover,
+.outline-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: none;
+}
+
+/* ==========================================
+   PREMIUM LUXURY CARD BORDER
+========================================== */
+
+.about-profile-card,
+.about-main-card,
+.about-stats-bar,
+.about-stats-bar > div,
+.service-card,
+.why-card,
+.portfolio-item,
+.cinematic-card,
+.booking-box,
+.review-form,
+.contact-box,
+.contact-link,
+.review-card {
+
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(212,175,55,.15);
+}
+
+.about-profile-card::before,
+.about-main-card::before,
+.about-stats-bar>div::before,
+.service-card::before,
+.why-card::before,
+.portfolio-item::before,
+.cinematic-card::before,
+.booking-box::before,
+.review-form::before,
+.contact-box::before,
+.contact-link::before,
+.review-card::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    border-radius:inherit;
+
+    padding:1px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(212,175,55,.22),
+        rgba(255,255,255,.05)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+            mask-composite:exclude;
+
+    pointer-events:none;
+}
+
+/* ===================================================
+        PREMIUM LUXURY METALLIC BORDER
+=================================================== */
+
+.about-profile-card,
+.about-main-card,
+.about-stats-bar,
+.about-stats-bar > div,
+.service-card,
+.why-card,
+.portfolio-item,
+.cinematic-card,
+.booking-box,
+.review-form,
+.contact-box,
+.contact-link,
+.review-card,
+.lightbox-content,
+.filter-btn,
+.footer-brand,
+.footer-info{
+
+    position:relative;
+    overflow:hidden;
+
+    border:1px solid rgba(212,175,55,.15);
+}
+
+/* Luxury Metallic Border */
+
+.about-profile-card::before,
+.about-main-card::before,
+.about-stats-bar>div::before,
+.service-card::before,
+.why-card::before,
+.portfolio-item::before,
+.cinematic-card::before,
+.booking-box::before,
+.review-form::before,
+.contact-box::before,
+.contact-link::before,
+.review-card::before,
+.lightbox-content::before,
+.filter-btn::before,
+.footer-brand::before,
+.footer-info::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    padding:1px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(212,175,55,.28),
+        rgba(255,255,255,.04)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+
+    pointer-events:none;
+}
+
+/* ===================================================
+   REUSABLE LUXURY CARD BORDER
+=================================================== */
+
+.luxury-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(212, 175, 55, 0.28),
+    rgba(255, 255, 255, 0.04)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 2;
+}

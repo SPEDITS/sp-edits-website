@@ -1,0 +1,56 @@
+/* =========================
+   SERVICES + WHY CHOOSE
+========================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.service-card,
+.why-card {
+  padding: 30px;
+  cursor: pointer;
+}
+
+.service-card h3,
+.why-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.service-card svg,
+.why-card svg {
+  width: 34px;
+  height: 34px;
+  color: #d4af37;
+  margin-bottom: 18px;
+
+  filter: none;
+  animation: none;
+  transform: none;
+
+  transition: none;
+}
+
+.service-card:hover svg,
+.why-card:hover svg {
+  filter: none;
+  animation: none;
+  transform: none;
+}
+
+.why .cards,
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.why .service-card,
+.why-card {
+  min-height: 205px;
+}

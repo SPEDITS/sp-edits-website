@@ -1,0 +1,296 @@
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews {
+  position: relative;
+}
+
+.review-form {
+  width: 100%;
+  max-width: 980px;
+  margin: 45px auto 0;
+  padding: 38px;
+  border-radius: 30px;
+
+  display: grid;
+  gap: 18px;
+
+  background: rgba(15, 15, 15, 0.62);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+
+  transform: none;
+}
+
+.review-form:hover,
+.review-form:active {
+  transform: none;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 17px;
+
+  background: rgba(15, 15, 15, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 14px;
+
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  outline: none;
+
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  transition:
+    transform 0.42s cubic-bezier(0.2, 1.35, 0.35, 1),
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.review-form input:hover,
+.review-form textarea:hover {
+  transform:
+    perspective(1000px)
+    rotateX(4deg)
+    rotateY(-5deg)
+    translateY(-8px)
+    scale(1.02);
+}
+
+.review-form input:active,
+.review-form textarea:active {
+  transform:
+    perspective(1000px)
+    rotateX(2deg)
+    rotateY(-2deg)
+    translateY(-3px)
+    scale(0.985);
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.48);
+  opacity: 1;
+}
+
+.review-form textarea {
+  min-height: 130px;
+}
+
+/* =========================
+   RATING BOX
+========================= */
+
+.rating-box {
+  width: 100%;
+  padding: 18px;
+
+  background: rgba(15, 15, 15, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 14px;
+
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  transition:
+    transform 0.42s cubic-bezier(0.2, 1.35, 0.35, 1),
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.rating-box:hover {
+  transform:
+    perspective(1000px)
+    rotateX(4deg)
+    rotateY(-5deg)
+    translateY(-8px)
+    scale(1.02);
+}
+
+.rating-box:active {
+  transform:
+    perspective(1000px)
+    rotateX(2deg)
+    rotateY(-2deg)
+    translateY(-3px)
+    scale(0.985);
+}
+
+.rating-box p,
+.rating-box:hover p {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 16px;
+  font-weight: 500;
+  transform: none;
+  transition: none;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* IMPORTANT:
+   This keeps star buttons from becoming submit-button shaped pills.
+*/
+.star,
+.rating-box .star,
+.stars button {
+  width: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+
+  color: #555;
+  font-size: 28px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: none !important;
+  filter: none !important;
+
+  transform: none !important;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease !important;
+}
+
+.star.active,
+.rating-box .star.active,
+.stars button.active {
+  color: #d4af37 !important;
+}
+
+.star:hover,
+.rating-box .star:hover,
+.stars button:hover {
+  color: #d4af37 !important;
+  transform: scale(1.12) !important;
+}
+
+/* =========================
+   REVIEW BUTTON
+========================= */
+
+.review-form button[type="submit"] {
+  width: 100%;
+  min-height: 60px;
+  padding: 18px;
+
+  background: #d4af37;
+  color: #000;
+
+  border: none;
+  border-radius: 40px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow: none;
+
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  transition:
+    transform 0.42s cubic-bezier(0.2, 1.35, 0.35, 1),
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.review-form button[type="submit"]:hover {
+  transform:
+    perspective(1000px)
+    rotateX(4deg)
+    rotateY(-5deg)
+    translateY(-8px)
+    scale(1.02);
+}
+
+.review-form button[type="submit"]:active {
+  transform:
+    perspective(1000px)
+    rotateX(2deg)
+    rotateY(-2deg)
+    translateY(-3px)
+    scale(0.985);
+}
+
+/* =========================
+   REVIEW LIST
+========================= */
+
+.review-list {
+  margin-top: 60px;
+  display: grid;
+  gap: 25px;
+}
+
+.review-card {
+  padding: 28px;
+  border-radius: 24px;
+
+  background: rgba(15, 15, 15, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+
+  transition: 0.35s;
+}
+
+.review-card:hover {
+  transform:
+    perspective(1000px)
+    rotateX(3deg)
+    rotateY(-4deg)
+    translateY(-6px)
+    scale(1.01);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.review-name {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.review-stars {
+  color: #d4af37;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.review-text {
+  color: #cfcfcf;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
