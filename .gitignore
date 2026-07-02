@@ -23,6 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Ignore portfolio videos
-public/portfolio/*.mp4
-public/portfolio/*.mp4
