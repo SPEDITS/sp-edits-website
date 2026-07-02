@@ -76,22 +76,23 @@
   display: block;
   color: #fff;
   font-family: "Cinzel", serif;
-  font-size: clamp(42px, 5vw, 76px);
+  font-size: clamp(36px, 4.2vw, 64px);
   font-weight: 700;
   letter-spacing: 2px;
+  line-height: 1.02;
 }
 
 .title-gold {
   display: block;
   color: #d4af37;
   font-family: "Cinzel", serif;
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: clamp(24px, 2.8vw, 40px);
   font-weight: 800;
   letter-spacing: 2px;
   margin-top: 6px;
   text-shadow: none;
+  line-height: 1.05;
 }
-
 .title-gold::after {
   display: none;
 }
@@ -266,4 +267,68 @@
 
 .hero-lens-flare{
     display:none;
+}
+
+/* ==========================================
+   PREMIUM HERO GREETING
+========================================== */
+
+.dynamic-greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 38px;
+}
+
+.greeting-title {
+  font-size: 0.68rem;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #d4af37;
+  font-weight: 600;
+  opacity: 0.92;
+  text-shadow: 0 0 14px rgba(212, 175, 55, 0.25);
+  animation: greetingSlowFade 4s ease-in-out infinite;
+}
+
+.greeting-divider {
+  width: 210px;
+  height: 1px;
+  margin-top: 15px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(212, 175, 55, 0.35),
+    #d4af37,
+    rgba(212, 175, 55, 0.35),
+    transparent
+  );
+  position: relative;
+}
+
+.greeting-divider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  background: #d4af37;
+  border-radius: 50%;
+  box-shadow:
+    0 0 12px rgba(212, 175, 55, 0.75),
+    0 0 22px rgba(212, 175, 55, 0.35);
+}
+
+@keyframes greetingSlowFade {
+  0%,
+  100% {
+    opacity: 0.82;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }

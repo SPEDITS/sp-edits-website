@@ -90,8 +90,24 @@ function Lightbox({
           transition={{ duration: 0.35, ease: "easeOut" }}
         >
           <div className="premium-image-frame">
-            <img src={selectedImage.img} alt={selectedImage.title} />
-          </div>
+  {selectedImage.pdf ? (
+    <iframe
+      src={selectedImage.pdf}
+      title={selectedImage.title}
+      className="lightbox-pdf"
+    />
+  ) : selectedImage.video ? (
+    <video
+      src={selectedImage.video}
+      controls
+      autoPlay
+      playsInline
+      className="lightbox-video"
+    />
+  ) : (
+    <img src={selectedImage.img} alt={selectedImage.title} />
+  )}
+</div>
 
           <h3>{selectedImage.title}</h3>
 

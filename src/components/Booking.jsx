@@ -1,7 +1,21 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaCheckCircle } from "react-icons/fa";
 import { fadeUp, slideRight, viewportOnce } from "../animations/motion";
 
 function Booking({ formData, handleChange, handleBookingSubmit }) {
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSuccess(true);
+
+    setTimeout(() => {
+      handleBookingSubmit(e);
+      setSuccess(false);
+    }, 850);
+  };
+
   return (
     <section id="booking" className="section booking">
       <motion.div
@@ -22,7 +36,21 @@ function Booking({ formData, handleChange, handleBookingSubmit }) {
         whileInView="show"
         viewport={viewportOnce}
       >
-        <form className="booking-form" onSubmit={handleBookingSubmit}>
+        <AnimatePresence>
+          {success && (
+            <motion.div
+              className="booking-success"
+              initial={{ opacity: 0, scale: 0.88 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.88 }}
+            >
+              <FaCheckCircle />
+              <span>Preparing Your Booking...</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <form className="booking-form" onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
@@ -95,17 +123,9 @@ function Booking({ formData, handleChange, handleBookingSubmit }) {
 
           <motion.button
             type="submit"
-            whileHover={{
-              scale: 1.03,
-              y: -4,
-            }}
-            whileTap={{
-              scale: 0.98,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 300,
-            }}
+            whileHover={{ scale: 1.03, y: -4 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             Book Now via WhatsApp
           </motion.button>

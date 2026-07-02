@@ -7,7 +7,18 @@ function Portfolio({
   filteredPortfolio,
   setSelectedImage,
 }) {
-  const categories = ["All", "Photography", "Cricket", "Ganpati", "Reels", "Designs"];
+ 
+ const categories = [
+  "Ganapati Photography",
+  "Pre-Wedding Photography",
+  "Portrait Photography",
+  "New Vehicle Edit",
+  "Pre-Wedding Edit",
+  "Ganapati Edit",
+  "Cricket Edit",
+  "Cinematic Edit",
+  "Poster Design",
+];
 
   const handleVideoPlay = (e) => {
     const video = e.currentTarget.querySelector("video");

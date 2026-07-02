@@ -13,13 +13,12 @@ import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Lightbox from "./components/Lightbox";
-import CinematicEffects from "./components/CinematicEffects";
 import ScrollProgress from "./components/ScrollProgress";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Ganapati Photography");
   const [selectedImage, setSelectedImage] = useState(null);
 
   const [formData, setFormData] = useState({
@@ -65,50 +64,145 @@ function App() {
   }, [loading]);
 
   const closeMenu = () => setMenuOpen(false);
+const portfolioItems = [
+  // ==============================
+  // Ganapati Photography
+  // ==============================
+  {
+    title: "Ganapati Photography",
+    category: "Ganapati Photography",
+    img: "/portfolio/ganapati-photo-1.jpg",
+  },
+  {
+    title: "Ganapati Photography 02",
+    category: "Ganapati Photography",
+    img: "/portfolio/ganapati-photo-2.jpg",
+  },
+  {
+    title: "Ganapati Photography 03",
+    category: "Ganapati Photography",
+    img: "/portfolio/ganapati-photo-3.jpg",
+  },
 
-  const portfolioItems = [
-    {
-      title: "Portrait Shoot",
-      category: "Photography",
-      img: "/portfolio/photo1.jpg.jpeg",
-    },
-    {
-      title: "Cinematic Edit",
-      category: "Reels",
-      img: "/portfolio/photo2.jpg.jpeg",
-    },
-    {
-      title: "Cricket Edit",
-      category: "Cricket",
-      img: "/portfolio/photo3.jpg.jpeg",
-    },
-    {
-      title: "Event Coverage",
-      category: "Photography",
-      img: "/portfolio/photo4.jpg.jpeg",
-    },
-    {
-      title: "Ganpati Shoot",
-      category: "Ganpati",
-      img: "/portfolio/photo5.jpg.jpeg",
-    },
-    {
-      title: "Premium Design",
-      category: "Designs",
-      img: "/portfolio/photo6.jpg.jpeg",
-    },
-  ];
+  // ==============================
+  // Pre-Wedding Photography
+  // ==============================
+  {
+    title: "Pre-Wedding Photography",
+    category: "Pre-Wedding Photography",
+    img: "/portfolio/prewedding-photo-1.jpg",
+  },
+  {
+    title: "Pre-Wedding Photography 02",
+    category: "Pre-Wedding Photography",
+    img: "/portfolio/prewedding-photo-2.jpg",
+  },
 
-  const filteredPortfolio =
-    activeCategory === "All"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
+  // ==============================
+  // Portrait Photography
+  // ==============================
+  {
+    title: "Portrait Photography",
+    category: "Portrait Photography",
+    img: "/portfolio/portrait-1.jpg",
+  },
+  {
+    title: "Portrait Photography 02",
+    category: "Portrait Photography",
+    img: "/portfolio/portrait-2.jpg",
+  },
 
-  const currentIndex = filteredPortfolio.findIndex(
-    (item) => item.title === selectedImage?.title
-  );
+  // ==============================
+  // New Vehicle Edit
+  // ==============================
+  {
+    title: "New Vehicle Edit",
+    category: "New Vehicle Edit",
+    img: "/portfolio/covers/new-vehicle-edit-cover.jpg",
+    video: "/portfolio/vehicle-reel-1.mp4",
+  },
+  {
+    title: "New Vehicle Edit 02",
+    category: "New Vehicle Edit",
+    video: "/portfolio/vehicle-reel-2.mp4",
+  },
 
-  const nextImage = () => {
+  // ==============================
+  // Pre-Wedding Edit
+  // ==============================
+  {
+    title: "Pre-Wedding Edit",
+    category: "Pre-Wedding Edit",
+    img: "/portfolio/covers/prewedding-edit-cover.jpg",
+    video: "/portfolio/prewedding-reel-1.mp4",
+  },
+
+  // ==============================
+  // Ganapati Edit
+  // ==============================
+  {
+    title: "Ganapati Edit",
+    category: "Ganapati Edit",
+    img: "/portfolio/covers/ganapati-edit-cover.jpg",
+    video: "/portfolio/ganapati-reel-1.mp4",
+  },
+
+  // ==============================
+  // Cricket Edit
+  // ==============================
+  {
+    title: "Cricket Edit",
+    category: "Cricket Edit",
+    img: "/portfolio/covers/cricket-edit-cover.jpg",
+    video: "/portfolio/cricket-reel-1.mp4",
+  },
+
+  // ==============================
+  // Cinematic Edit
+  // ==============================
+ {
+  title: "Cinematic Edit 01",
+  category: "Cinematic Edit",
+  img: "/portfolio/cinematic-reel-1-cover.jpg",
+  video: "/portfolio/cinematic-reel-1.mp4",
+},
+
+  // ==============================
+  // Poster Design
+  // ==============================
+  {
+    title: "Poster Design",
+    category: "Poster Design",
+    img: "/portfolio/poster-1.jpg",
+  },
+  {
+    title: "Poster Design 02",
+    category: "Poster Design",
+    img: "/portfolio/poster-2.jpg",
+  },
+];
+
+  const categoryOrder = [
+  "Ganapati Photography",
+  "Pre-Wedding Photography",
+  "Portrait Photography",
+  "New Vehicle Edit",
+  "Pre-Wedding Edit",
+  "Ganapati Edit",
+  "Cricket Edit",
+  "Cinematic Edit",
+  "Poster Design",
+];
+
+const filteredPortfolio = portfolioItems.filter(
+  (item) => item.category === activeCategory
+);
+
+const currentIndex = filteredPortfolio.findIndex(
+  (item) => item.title === selectedImage?.title
+);
+
+    const nextImage = () => {
     if (currentIndex === -1) return;
 
     setSelectedImage(
@@ -182,8 +276,6 @@ Requirements: ${formData.requirements}
         </video>
 
         <div className="site-bg-overlay"></div>
-
-       
 
         <div className="gold-particles">
           {[...Array(18)].map((_, index) => (

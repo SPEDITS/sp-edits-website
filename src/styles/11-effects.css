@@ -1070,3 +1070,253 @@ button[type="submit"]:hover,
     opacity: 0;
   }
 }
+
+/* =====================================================
+   PREMIUM MOBILE INTERACTIONS
+   Only interactive cards respond on touch.
+   Static containers remain completely still.
+===================================================== */
+
+@media (max-width:768px){
+
+  *{
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* -----------------------------
+     SERVICE CARDS
+  ------------------------------*/
+
+  .service-card{
+    transition:
+      transform .35s ease,
+      box-shadow .35s ease,
+      border-color .35s ease;
+  }
+
+  .service-card:active{
+    transform: translateY(-6px) scale(1.02);
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+    border-color:rgba(212,175,55,.45);
+  }
+
+  .service-card img{
+    transition:transform .4s ease;
+  }
+
+  .service-card:active img{
+    transform:scale(1.05);
+  }
+
+
+  /* -----------------------------
+     PORTFOLIO CARDS
+  ------------------------------*/
+
+  .portfolio-item{
+    transition:
+      transform .35s ease,
+      box-shadow .35s ease,
+      border-color .35s ease;
+  }
+
+  .portfolio-item:active{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+    border-color:rgba(212,175,55,.45);
+  }
+
+  .portfolio-item img,
+  .portfolio-item video{
+    transition:
+      transform .45s ease,
+      filter .45s ease;
+  }
+
+  .portfolio-item:active img,
+  .portfolio-item:active video{
+    transform:scale(1.05);
+    filter:saturate(1.05) contrast(1.05);
+  }
+
+
+  /* -----------------------------
+     WHY CHOOSE US
+  ------------------------------*/
+
+  .why-card{
+    transition:
+      transform .35s ease,
+      box-shadow .35s ease;
+  }
+
+  .why-card:active{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+  }
+
+
+  /* -----------------------------
+     REVIEW CARDS
+  ------------------------------*/
+
+  .review-card{
+    transition:
+      transform .35s ease,
+      box-shadow .35s ease;
+  }
+
+  .review-card:active{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+  }
+
+
+  /* -----------------------------
+     BUTTONS
+  ------------------------------*/
+
+  .gold-btn,
+  .outline-btn{
+    transition:
+      transform .2s ease,
+      box-shadow .2s ease;
+  }
+
+  .gold-btn:active,
+  .outline-btn:active{
+    transform:scale(.97);
+  }
+
+}
+
+/* =====================================================
+   MOBILE PREMIUM 3D TILT TAP EFFECT
+   Only Services, Why Choose and Portfolio cards
+===================================================== */
+
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Services + Why Choose cards */
+  #services .service-card,
+  #whychoose .service-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition:
+      transform 0.28s ease,
+      box-shadow 0.28s ease,
+      border-color 0.28s ease !important;
+    will-change: transform;
+  }
+
+  #services .service-card:active,
+  #whychoose .service-card:active {
+    transform:
+      translateY(-7px)
+      scale(1.025)
+      rotateX(4deg)
+      rotateY(-4deg) !important;
+
+    border-color: rgba(212, 175, 55, 0.52) !important;
+
+    box-shadow:
+      0 18px 42px rgba(0, 0, 0, 0.38) !important;
+  }
+
+  /* Portfolio cards */
+  #portfolio .portfolio-item {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition:
+      transform 0.28s ease,
+      box-shadow 0.28s ease,
+      border-color 0.28s ease !important;
+    will-change: transform;
+  }
+
+  #portfolio .portfolio-item:active {
+    transform:
+      translateY(-7px)
+      scale(1.025)
+      rotateX(4deg)
+      rotateY(-4deg) !important;
+
+    border-color: rgba(212, 175, 55, 0.52) !important;
+
+    box-shadow:
+      0 18px 42px rgba(0, 0, 0, 0.38) !important;
+  }
+
+  #portfolio .portfolio-item:active img,
+  #portfolio .portfolio-item:active video {
+    transform: scale(1.055) !important;
+    filter: contrast(1.08) saturate(1.08) !important;
+  }
+
+  /* Buttons straight press only */
+  .gold-btn:active,
+  .outline-btn:active {
+    transform: scale(0.97) !important;
+  }
+}
+
+/* CAMERA SHUTTER CLICK EFFECT */
+
+.camera-shutter {
+  position: fixed;
+  inset: 0;
+  z-index: 999999999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.camera-shutter span {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+}
+
+.camera-shutter.active span {
+  animation: cameraShutter 0.32s ease-in-out forwards;
+}
+
+@keyframes cameraShutter {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  35% {
+    transform: scaleY(1);
+    opacity: 0.85;
+  }
+
+  65% {
+    transform: scaleY(1);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+.lightbox-video {
+  display: block;
+  max-width: 82vw;
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: none;
+  outline: none;
+  background: #000;
+}
+

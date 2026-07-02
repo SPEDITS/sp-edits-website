@@ -1,10 +1,10 @@
 import {
-  FaGlobe,
   FaMapMarkerAlt,
   FaArrowUp,
   FaHeart,
 } from "react-icons/fa";
 
+import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 
 function Footer() {
@@ -16,20 +16,65 @@ function Footer() {
   };
 
   return (
-    <footer className="luxury-footer">
-      <div className="footer-gold-line"></div>
+    <motion.footer
+      className="luxury-footer"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.div
+        className="footer-gold-line"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 1.4,
+          ease: "easeOut",
+        }}
+        style={{ transformOrigin: "left" }}
+      />
 
       <div className="footer-content">
-        <div className="footer-brand">
-          <img src={logo} loading="eager"
-decoding="async" alt="SP Edits" />
+        <motion.div
+          className="footer-brand"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.8,
+          }}
+        >
+          <motion.img
+            src={logo}
+            alt="SP Edits"
+            loading="eager"
+            decoding="async"
+            whileHover={{
+              scale: 1.06,
+              rotate: -2,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 220,
+            }}
+          />
 
           <h3>SP EDITS</h3>
 
           <p>Sohang Prajapati Photography & Edits</p>
-        </div>
+        </motion.div>
 
-        <div className="footer-info">
+        <motion.div
+          className="footer-info"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.8,
+            delay: 0.25,
+          }}
+        >
           <p>
             <FaMapMarkerAlt />
             NAVSARI, GUJARAT
@@ -39,17 +84,54 @@ decoding="async" alt="SP Edits" />
             <FaHeart />
             CRAFTING YOUR MEMORIES WITH PASSION
           </p>
-        </div>
+        </motion.div>
       </div>
 
-      <button className="back-to-top" onClick={scrollToTop}>
+      <motion.button
+        className="back-to-top"
+        onClick={scrollToTop}
+        initial={{
+          opacity: 0,
+          scale: 0.7,
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        whileHover={{
+          scale: 1.08,
+          y: -4,
+        }}
+        whileTap={{
+          scale: 0.95,
+        }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.45,
+        }}
+      >
         <FaArrowUp />
-      </button>
+      </motion.button>
 
-      <p className="footer-copy">
+      <motion.p
+        className="footer-copy"
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{ once: true }}
+        transition={{
+          delay: 0.5,
+          duration: 0.6,
+        }}
+      >
         © 2026 SP EDITS | All Rights Reserved
-      </p>
-    </footer>
+      </motion.p>
+    </motion.footer>
   );
 }
 

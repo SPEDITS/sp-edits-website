@@ -13,6 +13,9 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body,
@@ -26,11 +29,23 @@ button {
 body {
   background: #050505;
   color: #fff;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 .site {
   position: relative;
+  min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: visible;
   background: transparent;
 }
 
@@ -237,72 +252,8 @@ body {
   box-shadow: none;
 }
 
-/* ==========================================
-   PREMIUM LUXURY CARD BORDER
-========================================== */
-
-.about-profile-card,
-.about-main-card,
-.about-stats-bar,
-.about-stats-bar > div,
-.service-card,
-.why-card,
-.portfolio-item,
-.cinematic-card,
-.booking-box,
-.review-form,
-.contact-box,
-.contact-link,
-.review-card {
-
-    position: relative;
-    overflow: hidden;
-
-    border: 1px solid rgba(212,175,55,.15);
-}
-
-.about-profile-card::before,
-.about-main-card::before,
-.about-stats-bar>div::before,
-.service-card::before,
-.why-card::before,
-.portfolio-item::before,
-.cinematic-card::before,
-.booking-box::before,
-.review-form::before,
-.contact-box::before,
-.contact-link::before,
-.review-card::before{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    border-radius:inherit;
-
-    padding:1px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.18),
-        rgba(212,175,55,.22),
-        rgba(255,255,255,.05)
-    );
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-            mask-composite:exclude;
-
-    pointer-events:none;
-}
-
 /* ===================================================
-        PREMIUM LUXURY METALLIC BORDER
+   PREMIUM LUXURY METALLIC BORDER
 =================================================== */
 
 .about-profile-card,
@@ -321,19 +272,16 @@ body {
 .lightbox-content,
 .filter-btn,
 .footer-brand,
-.footer-info{
-
-    position:relative;
-    overflow:hidden;
-
-    border:1px solid rgba(212,175,55,.15);
+.footer-info,
+.luxury-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.15);
 }
-
-/* Luxury Metallic Border */
 
 .about-profile-card::before,
 .about-main-card::before,
-.about-stats-bar>div::before,
+.about-stats-bar > div::before,
 .service-card::before,
 .why-card::before,
 .portfolio-item::before,
@@ -346,46 +294,7 @@ body {
 .lightbox-content::before,
 .filter-btn::before,
 .footer-brand::before,
-.footer-info::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:inherit;
-
-    padding:1px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.18),
-        rgba(212,175,55,.28),
-        rgba(255,255,255,.04)
-    );
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-
-    pointer-events:none;
-}
-
-/* ===================================================
-   REUSABLE LUXURY CARD BORDER
-=================================================== */
-
-.luxury-card {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.15);
-}
-
+.footer-info::before,
 .luxury-card::before {
   content: "";
   position: absolute;
