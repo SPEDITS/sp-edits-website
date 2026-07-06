@@ -321,7 +321,7 @@ Requirements: ${formData.requirements}
         </div>
 
         <div className="reveal reveal-delay-3">
-          <Reviews />
+        
         </div>
 
         <div className="reveal reveal-delay-3">

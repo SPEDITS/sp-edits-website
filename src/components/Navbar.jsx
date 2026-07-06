@@ -45,7 +45,6 @@ function Navbar({ menuOpen, setMenuOpen, closeMenu }) {
     { name: "Services", id: "services" },
     { name: "Portfolio", id: "portfolio" },
     { name: "Booking", id: "booking" },
-    { name: "Reviews", id: "reviews" },
     { name: "Contact", id: "contact" },
   ];
 
